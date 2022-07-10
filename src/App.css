@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
-}
+/* Google Font에서 헤더에 사용할 글꼴 불러오기 */
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html {
+  font-size: 62.5%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  color: #3f454d;
+  animation: fadein 3s;
+}
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* 헤더의 배경색을 그라데이션으로 지정합니다 */
+  background: linear-gradient(to bottom, #ffa6a9, #ffe3a3, #ffffff);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  /* 구글에서 가져온 글꼴을 헤더 글꼴로 지정합니다. */
+  font-family: "Cookie", cursive;
+  font-size: 3rem;
+  padding-top: 15px;
+  transition: top 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.add-list {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 80px 2rem 0 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-input {
+  flex: 4;
+  width: 20vw;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  background-color: #f3f3f3;
+  border: none;
+}
+/* Q5-1. Add to Fridge 버튼에 Add Shopping Item 버튼과 같은 스타일링 속성을 지정합니다. */
+.add-to-myfridge,
+.add-shoppinglist {
+  width: 15vw;
+  height: 40px;
+  border: none;
+  background-color: #fdf9d7;
+  text-align: center;
+  vertical-align: center;
+  font-size: 1rem;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+/* Q5-2. 셀렉트박스 스타일링 속성을 추가합니다. */
+.catecory-select {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  padding: 10px;
+  flex: 2;
+  width: 20vw;
+  background-color: #f3f3f3;
+  border-color: #ffffff;
+}
+
+/* Q5-3. 수량 입력 태그 스타일링 속성을 추가합니다. */
+.quantity {
+  margin-left: 10px;
+  width: 7vw;
+  background-color: #f3f3f3;
+  border-color: #ffffff00;
+}
+
+/* Q5-4. Add to Fridge, Add Shopping Item 버튼에 마우스 커서가 올라갔을 때의 CSS 속성값을 지정합니다. */
+.add-shoppinglist:hover,
+.add-to-myfridge:hover {
+  background-color: #fff7ba;
+  border-radius: 15px;
+  transition: 0.3s;
 }
