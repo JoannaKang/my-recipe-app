@@ -1,0 +1,19 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  flex: flex-grow;
+  justify-content: center;
+  font: 1rem sans-serif;
+  font-size: 0.7rem;
+  padding: 5px 0;
+  background-color: rgb(238, 238, 238);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.nav-bar button {
+  margin: 5px;
+  font-size: 1rem;
+  border: 0px;
+}

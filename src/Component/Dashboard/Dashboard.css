@@ -1,0 +1,59 @@
+.add-list {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 80px 2rem 0 2rem;
+}
+
+.text-input {
+  flex: 4;
+  width: 20vw;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #f3f3f3;
+  border: none;
+}
+
+select {
+  font-size: 1rem;
+}
+
+.add-to-myfridge,
+.add-shoppinglist {
+  width: 15vw;
+  height: 40px;
+  border: none;
+  background-color: #fdf9d7;
+  text-align: center;
+  vertical-align: center;
+  font-size: 1rem;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.catecory-select {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  padding: 10px;
+  flex: 2;
+  width: 20vw;
+  background-color: #f3f3f3;
+  border-color: #ffffff;
+}
+
+.quantity {
+  margin-left: 10px;
+  width: 7vw;
+  background-color: #f3f3f3;
+  border-color: #ffffff00;
+}
+
+.add-shoppinglist:hover,
+.add-to-myfridge:hover {
+  background-color: #fff7ba;
+  border-radius: 15px;
+  transition: 0.3s;
+}
