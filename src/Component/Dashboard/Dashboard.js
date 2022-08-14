@@ -1,4 +1,5 @@
 import React from "react";
+//(1) Link 컴포넌트를 react-router-dom에서 불러옵니다.
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +34,6 @@ class Dashboard extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  // (6) JSX 리턴 부분 render()로 감싸주기
   render() {
     return (
       <div className="add-list">
@@ -62,25 +62,26 @@ class Dashboard extends React.Component {
           name="quantity"
           onChange={(e) => this.getInput(e)}
         />
-        {/* (7) props로 전달받은 addItem 메서드로 상위 컴포넌트의 상태 값 변경하기*/}
-        <button
-          className="add-shoppinglist"
-          onClick={() => this.props.addItem("shoppingListItems", this.state)}
-        >
-          <Link to="/shoppingList">
+        {/* (2) button 태그를 Link 컴포넌트로 감싸고, to 속성을 추가하여 어떤 url로 이동해야 하는지 설정  */}
+        <Link to="/shoppingList">
+          <button
+            className="add-shoppinglist"
+            onClick={() => this.props.addItem("shoppingListItems", this.state)}
+          >
             <FontAwesomeIcon icon={faShoppingBasket} />
             Add Shopping Item
-          </Link>
-        </button>
-        <button
-          className="add-to-myfridge"
-          onClick={() => this.props.addItem("myFridgeItems", this.state)}
-        >
-          <Link to="/inMyFridgeList">
+          </button>
+        </Link>
+        {/* (2) button 태그를 Link 컴포넌트로 감싸고, to 속성을 추가하여 어떤 url로 이동해야 하는지 설정  */}
+        <Link to="/inMyFridgeList">
+          <button
+            className="add-to-myfridge"
+            onClick={() => this.props.addItem("myFridgeItems", this.state)}
+          >
             <FontAwesomeIcon icon={faPlusSquare} />
             Add to Fridge
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     );
   }

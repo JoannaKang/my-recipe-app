@@ -1,11 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import Dashbaord from "./Component/Dashboard/Dashboard";
 import NavBar from "./Component/NavBar/NavBar";
 
-import InMyFridgeList from "./Page/InMyFridgeList/InMyFridgeList";
+import Home from "./Page/Home/Home";
+import MyRecipes from "./Page/MyRecipes/MyRecipes";
+import MyFridgeList from "./Page/InMyFridgeList/InMyFridgeList";
 import ShoppingList from "./Page/ShoppingList/ShoppingList";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -34,12 +38,17 @@ class App extends React.Component {
         <section className="main-section">
           <Routes>
             <Route
+              path="/home"
+              element={<Home items={this.state.myFridgeItems} />}
+            />
+            <Route path="/myRecipes" element={<MyRecipes />} />
+            <Route
               path="/shoppingList"
               element={<ShoppingList items={this.state.shoppingListItems} />}
             />
             <Route
               path="/inMyFridgeList"
-              element={<InMyFridgeList items={this.state.myFridgeItems} />}
+              element={<MyFridgeList items={this.state.myFridgeItems} />}
             />
           </Routes>
         </section>
