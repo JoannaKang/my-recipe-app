@@ -1,0 +1,32 @@
+{
+  "ItemList": [
+    {
+      "name": "egg",
+      "category": "💫 etc",
+      "quantity": 1,
+      "type": "shoppingListItems",
+      "createdAt": "1661035598596"
+    },
+    {
+      "name": "milk",
+      "category": "🥛 Dairy",
+      "quantity": 1,
+      "type": "shoppingListItems",
+      "createdAt": "1661035634842"
+    },
+    {
+      "name": "apple",
+      "category": "🍓 Fruit",
+      "quantity": 1,
+      "type": "myFridgeItems",
+      "createdAt": "1661035476464"
+    },
+    {
+      "name": "bagle",
+      "category": "🥖 Bakery",
+      "quantity": 1,
+      "type": "myFridgeItems",
+      "createdAt": "1661035561200"
+    }
+  ]
+}

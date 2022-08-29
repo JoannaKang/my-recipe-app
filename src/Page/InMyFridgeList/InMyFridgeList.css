@@ -13,3 +13,18 @@
   height: 0.5px;
   margin: 0px 8px;
 }
+
+.move-button {
+  width: 100%;
+  background-color: #ffa6a9;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 150px;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.move-button:hover {
+  background-color: #ff8387;
+  transition: 0.3s;
+}

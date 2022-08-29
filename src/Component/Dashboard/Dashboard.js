@@ -1,5 +1,4 @@
 import React from "react";
-//(1) Link 컴포넌트를 react-router-dom에서 불러옵니다.
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -62,21 +61,39 @@ class Dashboard extends React.Component {
           name="quantity"
           onChange={(e) => this.getInput(e)}
         />
-        {/* (2) button 태그를 Link 컴포넌트로 감싸고, to 속성을 추가하여 어떤 url로 이동해야 하는지 설정  */}
         <Link to="/shoppingList">
+          {/* (1)(2)(3) 
+              addItem 콜백함수에 새로 추가된 식재료 정보(=this.state) 및 식재료 정보 종류를 구분하기 위한 type, 식재료 정보에 고유값을 할당하기 위한 createdAt 이라는 키를 새로 할당한 객체를 전달합니다. 
+              type에 할당되는 값은 "shoppingListItems", createdAt에 할당되는 값은 Date.now()로 생성한 후 문자열로 변환해 주세요
+          */}
           <button
             className="add-shoppinglist"
-            onClick={() => this.props.addItem("shoppingListItems", this.state)}
+            onClick={() =>
+              this.props.addItem({
+                ...this.state,
+                type: "shoppingListItems",
+                createdAt: Date.now().toString(),
+              })
+            }
           >
             <FontAwesomeIcon icon={faShoppingBasket} />
             Add Shopping Item
           </button>
         </Link>
-        {/* (2) button 태그를 Link 컴포넌트로 감싸고, to 속성을 추가하여 어떤 url로 이동해야 하는지 설정  */}
         <Link to="/inMyFridgeList">
+          {/* (4)(5)(6)
+            addItem 콜백함수에 새로 추가된 식재료 정보(=this.state) 및 식재료 정보 종류를 구분하기 위한 type, 식재료 정보에 고유값을 할당하기 위한 createdAt 이라는 키를 새로 할당한 객체를 전달합니다. 
+            type에 할당되는 값은 "myFridgeItems", createdAt에 할당되는 값은 Date.now()로 생성한 후 문자열로 변환해 주세요
+          */}
           <button
             className="add-to-myfridge"
-            onClick={() => this.props.addItem("myFridgeItems", this.state)}
+            onClick={() =>
+              this.props.addItem({
+                ...this.state,
+                type: "myFridgeItems",
+                createdAt: Date.now().toString(),
+              })
+            }
           >
             <FontAwesomeIcon icon={faPlusSquare} />
             Add to Fridge
